@@ -1,124 +1,28 @@
-# Serverless Node.js Project Skeleton
+# aws-configuration-fetcher
 
-[![Drone](https://drone.meltwater.io/api/badges/meltwater/makenew-serverless-nodejs/status.svg?branch=master)](https://drone.meltwater.io/meltwater/makenew-serverless-nodejs)
+[![Drone](https://drone.meltwater.io/api/badges/meltwater/aws-configuration-fetcher/status.svg?branch=master)](https://drone.meltwater.io/meltwater/aws-configuration-fetcher)
 
-Package skeleton for a Node.js Serverless project on AWS Lambda.
+A simple system for fetching configuration from both SSM and Secrets Manager in AWS
 
 ## Description
 
 Bootstrap a new Node.js Serverless project in five minutes or less.
 
-### Features
-
-- [Node.js]'s [npm] package structure.
-- Fast, reliable, and secure dependency management with [Yarn].
-- Next generation JavaScript with [Babel].
-- The brilliantly simple, babel-less, bundle-less ECMAScript module loader [esm].
-- Examples with configurable options and arguments powered by [examplr].
-- Linting with the [JavaScript Standard Style].
-- [Prettier] code.
-- Futuristic debuggable unit testing with [AVA].
-- Code coverage reporting with [Istanbul], and [nyc].
-- Continuous testing and automated package publishing with [Drone].
-- [Keep a CHANGELOG].
-- Consistent coding with [EditorConfig].
-
-[AVA]: https://github.com/avajs/ava
-[AWS Lambda]: https://aws.amazon.com/lambda/
-[Serverless]: https://serverless.com/
-[EditorConfig]: https://editorconfig.org/
-[esm]: https://www.npmjs.com/package/esm
-[Drone]: https://drone.io/
-[Istanbul]: https://istanbul.js.org/
-[JavaScript Standard Style]: https://standardjs.com/
-[Keep a CHANGELOG]: https://keepachangelog.com/
-[Node.js]: https://nodejs.org/
-[Prettier]: https://prettier.io/
-[examplr]: https://github.com/meltwater/node-examplr
-[npm]: https://www.npmjs.com/
-[nyc]: https://github.com/istanbuljs/nyc
-[Yarn]: https://yarnpkg.com/
-
-### Bootstrapping a new project
-
-1. Create an empty (**non-initialized**) repository on GitHub.
-2. Clone the master branch of this repository with
-   ```
-   $ git clone --single-branch git@github.com:meltwater/makenew-serverless-nodejs.git <new-node-lib>
-   $ cd <new-node-lib>
-   ```
-   Optionally, reset to the latest version with
-   ```
-   $ git reset --hard <version-tag>
-   ```
-3. Run
-   ```
-   $ ./makenew.sh
-   ```
-   This will replace the boilerplate, delete itself,
-   remove the git remote, remove upstream tags,
-   and stage changes for commit.
-4. Create the required Drone secrets with
-   ```
-   $ .drone/secrets.sh
-   ```
-5. Review, commit, and push the changes to GitHub with
-   ```
-   $ git diff --cached
-   $ git commit -m "Replace makenew boilerplate"
-   $ git remote add origin git@github.com:<user>/<new-node-lib>.git
-   $ git push -u origin master
-   ```
-6. Ensure the Drone build passes,
-   then publish the initial version of the package with
-   ```
-   $ nvm install
-   $ yarn install
-   $ npm version patch
-   ```
-7. Trigger a deploy to the test stage with
-   ```
-   $ yarn run release:test
-   ```
-
-### Updating from this skeleton
-
-If you want to pull in future updates from this skeleton,
-you can fetch and merge in changes from this repository.
-
-Add this as a new remote with
-
-```
-$ git remote add upstream git@github.com:meltwater/makenew-serverless-nodejs.git
-```
-
-You can then fetch and merge changes with
-
-```
-$ git fetch --no-tags upstream
-$ git merge upstream/master
-```
-
-#### Changelog for this skeleton
-
-Note that `CHANGELOG.md` is just a template for this skeleton.
-The actual changes for this project are documented in the commit history
-and summarized under [Releases].
-
-[Releases]: https://github.com/meltwater/makenew-serverless-nodejs/releases
+TODO
+[Releases]: https://github.com/meltwater/aws-configuration-fetcher/releases
 
 ## Installation
 
 Add this as a dependency to your project using [npm] with
 
 ```
-$ npm install @meltwater/makenew-serverless-nodejs
+$ npm install @meltwater/aws-configuration-fetcher
 ```
 
 or using [Yarn] with
 
 ```
-$ yarn add @meltwater/makenew-serverless-nodejs
+$ yarn add @meltwater/aws-configuration-fetcher
 ```
 
 [npm]: https://www.npmjs.com/
@@ -129,7 +33,7 @@ $ yarn add @meltwater/makenew-serverless-nodejs
 ### Quickstart
 
 ```
-$ git clone https://github.com/meltwater/makenew-serverless-nodejs.git serverless-nodejs
+$ git clone https://github.com/meltwater/aws-configuration-fetcher.git serverless-nodejs
 $ cd serverless-nodejs
 $ nvm install
 $ yarn install
@@ -156,10 +60,10 @@ The [source code] is hosted on GitHub.
 Clone the project with
 
 ```
-$ git clone git@github.com:meltwater/makenew-serverless-nodejs.git
+$ git clone git@github.com:meltwater/aws-configuration-fetcher.git
 ```
 
-[source code]: https://github.com/meltwater/makenew-serverless-nodejs
+[source code]: https://github.com/meltwater/aws-configuration-fetcher
 
 ### Requirements
 
@@ -240,7 +144,7 @@ Please submit and comment on bug reports and feature requests.
 
 To submit a patch:
 
-1. Fork it (https://github.com/meltwater/makenew-serverless-nodejs/fork).
+1. Fork it (https://github.com/meltwater/aws-configuration-fetcher/fork).
 2. Create your feature branch (`git checkout -b my-new-feature`).
 3. Make changes.
 4. Commit your changes (`git commit -am 'Add some feature'`).

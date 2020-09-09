@@ -1,5 +1,5 @@
 ---
-service: makenew-serverless-nodejs
+service: aws-configuration-fetcher
 
 frameworkVersion: "^1.58.0"
 

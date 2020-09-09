@@ -7,4 +7,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
-[Unreleased]: https://github.com/meltwater/makenew-serverless-nodejs/compare/v0.0.0...HEAD
+[Unreleased]: https://github.com/meltwater/aws-configuration-fetcher/compare/v0.0.1...HEAD
