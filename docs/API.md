@@ -48,7 +48,7 @@ Get a configuration object based on a provided array of configuration requests
 
 -   `arrayOfConfigurationRequests` **[Array][17]&lt;[ConfigurationRequest][18]>** 
 
-Returns **[object][14]** A map based on the ConfigurationRequest objects provided
+Returns **[object][14]** An object with properties based on the ConfigurationRequest objects provided and values of the adapter configuration responses
 
 ## ConfigurationRequest
 
