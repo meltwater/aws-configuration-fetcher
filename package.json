@@ -55,7 +55,9 @@
     "aws-sdk": "2.631.0"
   },
   "dependencies": {
-    "esm": "^3.2.25"
+    "argument-contracts": "^1.1.0",
+    "esm": "^3.2.25",
+    "testdouble": "^3.16.1"
   },
   "devDependencies": {
     "@meltwater/examplr": "^4.2.0",
