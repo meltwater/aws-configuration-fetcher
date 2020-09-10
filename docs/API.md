@@ -31,7 +31,6 @@ Returns **[ConfigurationRepository][16]** The configuration repository
 
 ## ConfigurationRepository
 
-A repository for getting configuration
 THIS IS NOT INTENDED TO BE CONSTRUCTED BY HAND. Please use createConfigurationRepository
 
 ### Parameters
@@ -40,6 +39,9 @@ THIS IS NOT INTENDED TO BE CONSTRUCTED BY HAND. Please use createConfigurationRe
     -   `$0.log`  
     -   `$0.ssmRepository`  
     -   `$0.secretsRepository`  
+-   `log` **[object][14]** A pino compatible logger
+-   `ssmRepository` **[object][14]** Internal use
+-   `secretsRepository` **[object][14]** Internal use
 
 ### getConfiguration
 
