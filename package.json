@@ -55,6 +55,7 @@
     "aws-sdk": "2.631.0"
   },
   "dependencies": {
+    "@meltwater/mlabs-logger": "^6.0.0",
     "argument-contracts": "^1.1.0",
     "esm": "^3.2.25",
     "testdouble": "^3.16.1"

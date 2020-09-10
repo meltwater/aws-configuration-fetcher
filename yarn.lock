@@ -504,7 +504,7 @@
   resolved "https://registry.npmjs.org/@meltwater/coerce/-/coerce-0.2.1.tgz#f8b4cadcc0b46ac0438353d7dea3c2ae656a4f08"
   integrity sha512-xgrpY57yvRhlrpnUzNLJOQWQmXiY9rYoVKp6I8BJ77+LGHanp+Ck370xgLbRMA8qoMC253Tnu2sEANyv9rEp6Q==
 
-"@meltwater/examplr@^4.2.0":
+"@meltwater/examplr@^4.2.0", "@meltwater/examplr@^4.3.0":
   version "4.4.0"
   resolved "https://registry.yarnpkg.com/@meltwater/examplr/-/examplr-4.4.0.tgz#ee84910c9a8bb3bd3da08ac9488a79488231162b"
   integrity sha512-aBT7+nkG4g+F+2XvQJbBtsrrX98G11jLMRfd+6L2S8d0I3bjreufD2TfGe1YQUr6zotP92S4kvRuiYBBeA5zzA==
@@ -513,6 +513,16 @@
     change-case "^4.1.1"
     pino "^6.3.2"
     pino-pretty "^4.0.0"
+
+"@meltwater/mlabs-logger@^6.0.0":
+  version "6.0.0"
+  resolved "https://registry.npmjs.org/@meltwater/mlabs-logger/-/mlabs-logger-6.0.0.tgz#001f7a6b1315ac9cfe78b4203985b0856da84c8d"
+  integrity sha512-zyS3+Ef1ZltLWBu3sGvQBOMC2fC2mB7bXVE+NRT/LQypayxuZSyRKGtWUNXBtPb+yfmx/yQlYfluegFqg/y6Pg==
+  dependencies:
+    "@meltwater/examplr" "^4.3.0"
+    bunyan-formatter "^1.0.0"
+    debug "^4.0.1"
+    pino "^6.3.2"
 
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
