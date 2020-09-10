@@ -25,7 +25,7 @@ Create a new instance of a ConfigurationRepository
 -   `options` **[object][14]?** See below
     -   `options.cache` **cacheManager?** An instance of a cache from the npm package 'cache-manager'. Defaults to in memory cache
     -   `options.cacheKey` **[string][15]?** A key used to isolate the configuration cache from other cache namespaces. Defaults to 'configuration'
-    -   `options.log` **[string][15]?** A pino compatible logger. Defaults to a noop logger
+    -   `options.log` **[object][14]?** A pino compatible logger. Defaults to a noop logger
 
 Returns **[ConfigurationRepository][16]** The configuration repository
 
