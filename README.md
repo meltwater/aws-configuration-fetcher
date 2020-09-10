@@ -200,10 +200,12 @@ Please submit and comment on bug reports and feature requests.
 
 To submit a patch:
 
-1. Request access to the repo in slack #team-jackalope
-2. Create a branch
-3. Make changes
-4. Open a pull request
+1. Fork it (https://github.com/meltwater/aws-configuration-fetcher/fork).
+2. Create your feature branch (`git checkout -b my-new-feature`).
+3. Make changes.
+4. Commit your changes (`git commit -am 'Add some feature'`).
+5. Push to the branch (`git push origin my-new-feature`).
+6. Create a new Pull Request.
 
 ## License
 
