@@ -25,6 +25,7 @@
     "docs"
   ],
   "scripts": {
+    "documentation": "documentation build ./index.js -f md > ./docs/API.md",
     "test": "nyc ava",
     "pretest": "npm-run-all lint",
     "posttest": "serverless package",
@@ -33,7 +34,7 @@
     "test:inspect": "node --inspect node_modules/ava/profile",
     "test:inspect:watch": "nodemon --inspect node_modules/ava/profile",
     "lint": "eslint --ignore-path .gitignore --ext .js .",
-    "preversion": "npm-run-all test",
+    "preversion": "npm-run-all documentation test",
     "postversion": "git push && git push --tags",
     "deploy": "serverless deploy --aws-s3-accelerate",
     "release:staging": ".drone/deploy.sh staging",
@@ -55,16 +56,15 @@
     "aws-sdk": "2.631.0"
   },
   "dependencies": {
-    "@meltwater/mlabs-logger": "^6.0.0",
     "argument-contracts": "^1.1.0",
-    "esm": "^3.2.25",
-    "testdouble": "^3.16.1"
+    "esm": "^3.2.25"
   },
   "devDependencies": {
     "@meltwater/examplr": "^4.2.0",
     "ava": "^3.3.0",
     "aws-sdk": "2.631.0",
     "del-cli": "^3.0.0",
+    "documentation": "^13.0.2",
     "eslint": "^7.4.0",
     "eslint-config-standard": "^14.1.0",
     "eslint-plugin-import": "^2.18.2",
@@ -76,6 +76,7 @@
     "nyc": "^15.0.0",
     "prettier": "^2.0.2",
     "serverless": "^1.58.0",
-    "serverless-offline": "^6.1.2"
+    "serverless-offline": "^6.1.2",
+    "testdouble": "^3.16.1"
   }
 }
