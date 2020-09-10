@@ -25,7 +25,7 @@
     "docs"
   ],
   "scripts": {
-    "documentation": "documentation build ./index.js -f md > ./docs/API.md",
+    "docs": "documentation build ./index.js -f md > ./docs/API.md",
     "test": "nyc ava",
     "pretest": "npm-run-all lint",
     "posttest": "serverless package",
@@ -34,7 +34,7 @@
     "test:inspect": "node --inspect node_modules/ava/profile",
     "test:inspect:watch": "nodemon --inspect node_modules/ava/profile",
     "lint": "eslint --ignore-path .gitignore --ext .js .",
-    "preversion": "npm-run-all documentation test",
+    "preversion": "npm-run-all docs test",
     "postversion": "git push && git push --tags",
     "deploy": "serverless deploy --aws-s3-accelerate",
     "release:staging": ".drone/deploy.sh staging",

@@ -35,13 +35,10 @@ THIS IS NOT INTENDED TO BE CONSTRUCTED BY HAND. Please use createConfigurationRe
 
 ### Parameters
 
--   `$0` **[Object][14]** 
-    -   `$0.log`  
-    -   `$0.ssmRepository`  
-    -   `$0.secretsRepository`  
--   `log` **[object][14]** A pino compatible logger
--   `ssmRepository` **[object][14]** Internal use
--   `secretsRepository` **[object][14]** Internal use
+-   `options` **[object][14]** Internal use
+    -   `options.log` **[object][14]** Internal use
+    -   `options.ssmRepository` **[object][14]** Internal use
+    -   `options.secretsRepository` **[object][14]** Internal use
 
 ### getConfiguration
 
