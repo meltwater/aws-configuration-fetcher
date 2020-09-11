@@ -55,6 +55,7 @@
   },
   "dependencies": {
     "argument-contracts": "^1.1.0",
+    "cache-manager": "^3.4.0",
     "esm": "^3.2.25"
   },
   "devDependencies": {
