@@ -4,13 +4,6 @@
 
 A simple system for fetching configuration from both SSM and Secrets Manager in AWS
 
-## Description
-
-Bootstrap a new Node.js Serverless project in five minutes or less.
-
-TODO
-[Releases]: https://github.com/meltwater/aws-configuration-fetcher/releases
-
 ## Installation
 
 Add this as a dependency to your project using [npm] with
@@ -27,6 +20,69 @@ $ yarn add @meltwater/aws-configuration-fetcher
 
 [npm]: https://www.npmjs.com/
 [Yarn]: https://yarnpkg.com/
+
+## Usage
+
+The project exposes a class to help you define your configuration requests. This class
+is used in conjunction with the ConfigurationRepository to retrieve the values for your
+configuration.
+
+```javascript
+import { createConfigurationRepository, ConfigurationRequest, ConfigurationRequestTypes } from '@meltwater/aws-configuration-fetcher'
+
+const configurationRepository = createConfigurationRepository()
+
+const configuration = configurationRepository.getConfiguration([
+  new ConfigurationRequest({
+    key: '/some/magical/parameter/path',
+    propertyName: 'someMagicalParameter',
+    type: ConfigurationRequestTypes.ssm
+  }),
+  new ConfigurationRequest({
+    key: 'something-super-secret',
+    propertyName: 'somethingSuperSecret',
+    type: ConfigurationRequestTypes.secret
+  })
+])
+
+console.log(configuration.someMagicalParameter)
+console.log(configuration.somethingSuperSecret, 'Maybe I should not log this...')
+```
+
+### Adapting configuration values
+
+The `ConfigurationRequest` also allows you to adapt a value being returned. This is helpful
+for providing additional validation, or converting the value to a primitive other than string.
+
+```javascript
+import { createConfigurationRepository, ConfigurationRequest, ConfigurationRequestTypes } from '@meltwater/aws-configuration-fetcher'
+
+const configurationRepository = createConfigurationRepository()
+
+const configuration = configurationRepository.getConfiguration([
+  new ConfigurationRequest({
+    adapter: (value) => {
+      if(value.trim() === '') {
+        throw new Error('The magic has faded, because the parameter value was empty.')
+      }
+      return value
+    },
+    key: '/some/magical/parameter/path',
+    propertyName: 'someMagicalParameter',
+    type: ConfigurationRequestTypes.ssm
+  }),
+  new ConfigurationRequest({
+    adapter: (value) => parseInt(value)
+    key: 'something-super-secret',
+    propertyName: 'somethingSuperSecret',
+    type: ConfigurationRequestTypes.secret
+  })
+])
+```
+
+## Api Documentation
+
+We have provided a [full API spec](docs/API.md) if you like that sorta thing!
 
 ## Development and Testing
 
@@ -153,7 +209,7 @@ To submit a patch:
 
 ## License
 
-This Serverless project is Copyright (c) 2019-2020 Meltwater Group.
+This project is Copyright (c) 2019-2020 Meltwater Group.
 
 ## Warranty
 
