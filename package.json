@@ -20,8 +20,6 @@
     "yarn.lock",
     "index.js",
     "lib",
-    "handlers",
-    "data",
     "docs"
   ],
   "scripts": {
