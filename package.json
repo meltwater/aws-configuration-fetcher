@@ -1,6 +1,6 @@
 {
   "name": "@meltwater/aws-configuration-fetcher",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "A simple system for fetching configuration from both SSM and Secrets Manager in AWS",
   "main": "index.js",
   "module": "lib/index.js",
