@@ -11,11 +11,12 @@
 -   [ConfigurationRequest][7]
     -   [Parameters][8]
 -   [configurationRequestTypes][9]
-    -   [secret][10]
-    -   [ssm][11]
--   [ConfigurationRequestTypes][12]
-    -   [isValid][13]
-        -   [Parameters][14]
+    -   [local][10]
+    -   [secret][11]
+    -   [ssm][12]
+-   [ConfigurationRequestTypes][13]
+    -   [isValid][14]
+        -   [Parameters][15]
 
 ## createConfigurationRepository
 
@@ -23,12 +24,12 @@ Create a new instance of a ConfigurationRepository
 
 ### Parameters
 
--   `options` **[object][15]?** See below
+-   `options` **[object][16]?** See below
     -   `options.cache` **cacheManager?** An instance of a cache from the npm package 'cache-manager'. Defaults to in memory cache
-    -   `options.cacheKey` **[string][16]?** A key used to isolate the configuration cache from other cache namespaces. Defaults to 'configuration'
-    -   `options.log` **[object][15]?** A pino compatible logger. Defaults to a noop logger
+    -   `options.cacheKey` **[string][17]?** A key used to isolate the configuration cache from other cache namespaces. Defaults to 'configuration'
+    -   `options.log` **[object][16]?** A pino compatible logger. Defaults to a noop logger
 
-Returns **[ConfigurationRepository][17]** The configuration repository
+Returns **[ConfigurationRepository][18]** The configuration repository
 
 ## ConfigurationRepository
 
@@ -36,10 +37,10 @@ THIS IS NOT INTENDED TO BE CONSTRUCTED BY HAND. Please use createConfigurationRe
 
 ### Parameters
 
--   `options` **[object][15]** Internal use
-    -   `options.log` **[object][15]** Internal use
-    -   `options.ssmRepository` **[object][15]** Internal use
-    -   `options.secretsRepository` **[object][15]** Internal use
+-   `options` **[object][16]** Internal use
+    -   `options.log` **[object][16]** Internal use
+    -   `options.ssmRepository` **[object][16]** Internal use
+    -   `options.secretsRepository` **[object][16]** Internal use
 
 ### getConfiguration
 
@@ -47,9 +48,9 @@ Get a configuration object based on a provided array of configuration requests
 
 #### Parameters
 
--   `arrayOfConfigurationRequests` **[Array][18]&lt;[ConfigurationRequest][19]>** 
+-   `arrayOfConfigurationRequests` **[Array][19]&lt;[ConfigurationRequest][20]>** 
 
-Returns **[object][15]** An object with properties based on the ConfigurationRequest objects provided and values of the adapter configuration responses
+Returns **[object][16]** An object with properties based on the ConfigurationRequest objects provided and values of the adapter configuration responses
 
 ## ConfigurationRequest
 
@@ -57,15 +58,19 @@ A request for a configuration value
 
 ### Parameters
 
--   `options` **[object][15]** See below
-    -   `options.adapter` **[Function][20]?** A function that will be passed the raw value and be allowed to modify it before returning (optional, default `x=>x`)
-    -   `options.key` **[string][16]** The key for the requested configuration. For SSM the parameter path, for Secrets manager the secret name.
-    -   `options.propertyName` **[string][16]** The property name the value will be assigned to in the response object from getting configuration
-    -   `options.type` **[ConfigurationRequestTypes][21]** The type of configuration request
+-   `options` **[object][16]** See below
+    -   `options.adapter` **[Function][21]?** A function that will be passed the raw value and be allowed to modify it before returning (optional, default `x=>x`)
+    -   `options.key` **[string][17]** The key for the requested configuration. For SSM the parameter path, for Secrets manager the secret name.
+    -   `options.propertyName` **[string][17]** The property name the value will be assigned to in the response object from getting configuration
+    -   `options.type` **[ConfigurationRequestTypes][22]** The type of configuration request
 
 ## configurationRequestTypes
 
 The available types of configuration requests
+
+### local
+
+Local
 
 ### secret
 
@@ -86,9 +91,9 @@ Check to see if a given string is a valid ConfigurationRequestTypes
 
 #### Parameters
 
--   `possibleType` **[string][16]** Possible ConfigurationRequestTypes
+-   `possibleType` **[string][17]** Possible ConfigurationRequestTypes
 
-Returns **[boolean][22]** True for value, false for invalid
+Returns **[boolean][23]** True for value, false for invalid
 
 [1]: #createconfigurationrepository
 
@@ -108,28 +113,30 @@ Returns **[boolean][22]** True for value, false for invalid
 
 [9]: #configurationrequesttypes
 
-[10]: #secret
+[10]: #local
 
-[11]: #ssm
+[11]: #secret
 
-[12]: #configurationrequesttypes-1
+[12]: #ssm
 
-[13]: #isvalid
+[13]: #configurationrequesttypes-1
 
-[14]: #parameters-4
+[14]: #isvalid
 
-[15]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
+[15]: #parameters-4
 
-[16]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
+[16]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
 
-[17]: #configurationrepository
+[17]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
 
-[18]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array
+[18]: #configurationrepository
 
-[19]: #configurationrequest
+[19]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array
 
-[20]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function
+[20]: #configurationrequest
 
-[21]: #configurationrequesttypes
+[21]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function
 
-[22]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean
+[22]: #configurationrequesttypes
+
+[23]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean
