@@ -28,6 +28,8 @@ Create a new instance of a ConfigurationRepository
     -   `options.cache` **cacheManager?** An instance of a cache from the npm package 'cache-manager'. Defaults to in memory cache
     -   `options.cacheKey` **[string][17]?** A key used to isolate the configuration cache from other cache namespaces. Defaults to 'configuration'
     -   `options.log` **[object][16]?** A pino compatible logger. Defaults to a noop logger
+    -   `options.smClient` **[object][16]?** An AWS SDK SecretsManager client. Defaults to a new SecretsManager().
+    -   `options.ssmClient` **[object][16]?** An AWS SDK SSM client. Defaults to a new SSM().
 
 Returns **[ConfigurationRepository][18]** The configuration repository
 
