@@ -1,7 +1,7 @@
 ---
 service: aws-configuration-fetcher
 
-frameworkVersion: "^1.58.0"
+frameworkVersion: "^2.0.0"
 
 plugins:
   - serverless-offline
@@ -12,42 +12,11 @@ provider:
   region: ${env:AWS_DEFAULT_REGION, 'eu-west-1'}
   stage: ${opt:stage, env:SERVERLESS_STAGE, 'staging'}
   logRetentionInDays: 30
-  environment:
-    NODE_ENV: production
+  environment: ${file(./serverless/environment.yml)}
 
 package:
   individually: true
-  exclude:
-    - .drone/**
-    - .editorconfig
-    - .eslintrc.json
-    - .npmrc
-    - .nvmrc
-    - .nyc_output/**
-    - .nycrc.json
-    - .prettierrc.json
-    - .yarn-cache/**
-    - .yarnrc
-    - CHANGELOG.md
-    - README.md
-    - ava.config.js
-    - aws_credentials
-    - aws_role_session_name
-    - coverage/**
-    - examples/**
-    - fixtures/**
-    - makenew.sh
-    - node_modules/.bin/**
-    - nodemon.json
-    - serverless.yml
-    - snapshots/**
-    - tmp/**
-    - yarn.lock
+  exclude: ${file(./serverless/exclude.yml)}
 
-functions:
-  todo:
-    handler: handlers/index.todo
-    events:
-      - http:
-          method: get
-          path: /todo
+functions: ${file(./serverless/functions.yml)}
+

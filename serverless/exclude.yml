@@ -1,0 +1,26 @@
+---
+- .drone/**
+- .editorconfig
+- .eslintrc.json
+- .npmrc
+- .nvmrc
+- .nyc_output/**
+- .nycrc.json
+- .prettierrc.json
+- .yarn-cache/**
+- .yarnrc
+- CHANGELOG.md
+- README.md
+- ava.config.js
+- aws_credentials
+- aws_role_session_name
+- coverage/**
+- examples/**
+- fixtures/**
+- makenew.sh
+- node_modules/.bin/**
+- nodemon.json
+- serverless.yml
+- snapshots/**
+- tmp/**
+- yarn.lock

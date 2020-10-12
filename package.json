@@ -42,6 +42,7 @@
     "example:inspect": "node --inspect examples",
     "example:inspect:watch": "nodemon --exec node --inspect examples",
     "offline": "serverless offline",
+    "offline:watch": "nodemon node_modules/.bin/serverless offline",
     "pretty": "prettier --ignore-path .gitignore --write '**/*.(js|json|graphql)'",
     "format": "npm-run-all --serial pretty format:*",
     "format:ts": "eslint --ignore-path .gitignore --fix --ext .js .",
@@ -51,7 +52,7 @@
     "node": ">=12.13.0"
   },
   "resolutions": {
-    "aws-sdk": "2.631.0"
+    "aws-sdk": "2.712.0"
   },
   "dependencies": {
     "argument-contracts": "^1.1.0",
@@ -62,7 +63,7 @@
   "devDependencies": {
     "@meltwater/examplr": "^4.2.0",
     "ava": "^3.3.0",
-    "aws-sdk": "2.631.0",
+    "aws-sdk": "2.712.0",
     "del-cli": "^3.0.0",
     "documentation": "^13.0.2",
     "eslint": "^7.4.0",
@@ -75,7 +76,7 @@
     "npm-run-all": "^4.1.2",
     "nyc": "^15.0.0",
     "prettier": "^2.0.2",
-    "serverless": "^1.58.0",
+    "serverless": "^2.1.1",
     "serverless-offline": "^6.1.2",
     "testdouble": "^3.16.1"
   }
