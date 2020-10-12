@@ -82,7 +82,7 @@ const configuration = configurationRepository.getConfiguration([
 
 ## Api Documentation
 
-We have provided a [full API spec](docs/API.md) if you like that sorta thing!
+We have provided a [full API spec](./docs) if you like that sorta thing!
 
 ## Development and Testing
 

@@ -23,7 +23,7 @@
     "docs"
   ],
   "scripts": {
-    "docs": "documentation build ./index.js -f md > ./docs/API.md",
+    "docs": "documentation build ./index.js -f md > ./docs/README.md",
     "test": "nyc ava",
     "pretest": "npm-run-all lint",
     "posttest": "serverless package",
