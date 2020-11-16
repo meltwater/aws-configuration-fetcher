@@ -1,5 +1,6 @@
 # aws-configuration-fetcher
 
+![main](https://github.com/meltwater/aws-configuration-fetcher/workflows/main/badge.svg)
 [![Drone](https://drone.meltwater.io/api/badges/meltwater/aws-configuration-fetcher/status.svg?branch=master)](https://drone.meltwater.io/meltwater/aws-configuration-fetcher)
 
 A simple system for fetching configuration from both SSM and Secrets Manager in AWS
