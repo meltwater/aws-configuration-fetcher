@@ -11,7 +11,7 @@
   "homepage": "https://github.com/meltwater/aws-configuration-fetcher",
   "bugs": "https://github.com/meltwater/aws-configuration-fetcher/issues",
   "repository": "meltwater/aws-configuration-fetcher",
-  "license": "Apache-2.0",
+  "license": "MIT",
   "author": {
     "name": "Team Jackalope",
     "email": "evan.sosenko@meltwater.com"
