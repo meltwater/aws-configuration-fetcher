@@ -1,5 +1,7 @@
 # aws-configuration-fetcher
 
+[![npm](https://img.shields.io/npm/v/@meltwater/aws-configuration-fetcher.svg)](https://www.npmjs.com/package/@meltwater/aws-configuration-fetcher)
+![main](https://github.com/meltwater/aws-configuration-fetcher/workflows/main/badge.svg)
 [![Drone](https://drone.meltwater.io/api/badges/meltwater/aws-configuration-fetcher/status.svg?branch=master)](https://drone.meltwater.io/meltwater/aws-configuration-fetcher)
 
 A simple system for fetching configuration from both SSM and Secrets Manager in AWS
@@ -209,7 +211,7 @@ To submit a patch:
 
 ## License
 
-This project is Copyright (c) 2019-2020 Meltwater Group.
+This npm package is licensed under the MIT license.
 
 ## Warranty
 
