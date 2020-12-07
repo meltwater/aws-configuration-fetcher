@@ -2,21 +2,21 @@
 
 ### Table of Contents
 
--   [createConfigurationRepository][1]
-    -   [Parameters][2]
--   [ConfigurationRepository][3]
-    -   [Parameters][4]
-    -   [getConfiguration][5]
-        -   [Parameters][6]
--   [ConfigurationRequest][7]
-    -   [Parameters][8]
--   [configurationRequestTypes][9]
-    -   [local][10]
-    -   [secret][11]
-    -   [ssm][12]
--   [ConfigurationRequestTypes][13]
-    -   [isValid][14]
-        -   [Parameters][15]
+- [createConfigurationRepository][1]
+  - [Parameters][2]
+- [ConfigurationRepository][3]
+  - [Parameters][4]
+  - [getConfiguration][5]
+    - [Parameters][6]
+- [ConfigurationRequest][7]
+  - [Parameters][8]
+- [configurationRequestTypes][9]
+  - [local][10]
+  - [secret][11]
+  - [ssm][12]
+- [ConfigurationRequestTypes][13]
+  - [isValid][14]
+    - [Parameters][15]
 
 ## createConfigurationRepository
 
@@ -24,12 +24,15 @@ Create a new instance of a ConfigurationRepository
 
 ### Parameters
 
--   `options` **[object][16]?** See below
-    -   `options.cache` **cacheManager?** An instance of a cache from the npm package 'cache-manager'. Defaults to in memory cache
-    -   `options.cacheKey` **[string][17]?** A key used to isolate the configuration cache from other cache namespaces. Defaults to 'configuration'
-    -   `options.log` **[object][16]?** A pino compatible logger. Defaults to a noop logger
-    -   `options.smClient` **[object][16]?** An AWS SDK SecretsManager client. Defaults to a new SecretsManager().
-    -   `options.ssmClient` **[object][16]?** An AWS SDK SSM client. Defaults to a new SSM().
+- `options` **[object][16]?** See below
+  - `options.cache` **cacheManager?** An instance of a cache from the npm package 'cache-manager'.
+    Defaults to in memory cache
+  - `options.cacheKey` **[string][17]?** A key used to isolate the configuration cache from other
+    cache namespaces. Defaults to 'configuration'
+  - `options.log` **[object][16]?** A pino compatible logger. Defaults to a noop logger
+  - `options.smClient` **[object][16]?** An AWS SDK SecretsManager client. Defaults to a new
+    SecretsManager().
+  - `options.ssmClient` **[object][16]?** An AWS SDK SSM client. Defaults to a new SSM().
 
 Returns **[ConfigurationRepository][18]** The configuration repository
 
@@ -39,10 +42,10 @@ THIS IS NOT INTENDED TO BE CONSTRUCTED BY HAND. Please use createConfigurationRe
 
 ### Parameters
 
--   `options` **[object][16]** Internal use
-    -   `options.log` **[object][16]** Internal use
-    -   `options.ssmRepository` **[object][16]** Internal use
-    -   `options.secretsRepository` **[object][16]** Internal use
+- `options` **[object][16]** Internal use
+  - `options.log` **[object][16]** Internal use
+  - `options.ssmRepository` **[object][16]** Internal use
+  - `options.secretsRepository` **[object][16]** Internal use
 
 ### getConfiguration
 
@@ -50,9 +53,10 @@ Get a configuration object based on a provided array of configuration requests
 
 #### Parameters
 
--   `arrayOfConfigurationRequests` **[Array][19]&lt;[ConfigurationRequest][20]>** 
+- `arrayOfConfigurationRequests` **[Array][19]&lt;[ConfigurationRequest][20]>**
 
-Returns **[object][16]** An object with properties based on the ConfigurationRequest objects provided and values of the adapter configuration responses
+Returns **[object][16]** An object with properties based on the ConfigurationRequest objects
+provided and values of the adapter configuration responses
 
 ## ConfigurationRequest
 
@@ -60,11 +64,14 @@ A request for a configuration value
 
 ### Parameters
 
--   `options` **[object][16]** See below
-    -   `options.adapter` **[Function][21]?** A function that will be passed the raw value and be allowed to modify it before returning (optional, default `x=>x`)
-    -   `options.key` **[string][17]** The key for the requested configuration. For SSM the parameter path, for Secrets manager the secret name.
-    -   `options.propertyName` **[string][17]** The property name the value will be assigned to in the response object from getting configuration
-    -   `options.type` **[ConfigurationRequestTypes][22]** The type of configuration request
+- `options` **[object][16]** See below
+  - `options.adapter` **[Function][21]?** A function that will be passed the raw value and be
+    allowed to modify it before returning (optional, default `x=>x`)
+  - `options.key` **[string][17]** The key for the requested configuration. For SSM the parameter
+    path, for Secrets manager the secret name.
+  - `options.propertyName` **[string][17]** The property name the value will be assigned to in the
+    response object from getting configuration
+  - `options.type` **[ConfigurationRequestTypes][22]** The type of configuration request
 
 ## configurationRequestTypes
 
@@ -84,8 +91,7 @@ SSM
 
 ## ConfigurationRequestTypes
 
-configurationRequestTypes accessor object
-\*
+configurationRequestTypes accessor object \*
 
 ### isValid
 
@@ -93,52 +99,30 @@ Check to see if a given string is a valid ConfigurationRequestTypes
 
 #### Parameters
 
--   `possibleType` **[string][17]** Possible ConfigurationRequestTypes
+- `possibleType` **[string][17]** Possible ConfigurationRequestTypes
 
 Returns **[boolean][23]** True for value, false for invalid
 
 [1]: #createconfigurationrepository
-
 [2]: #parameters
-
 [3]: #configurationrepository
-
 [4]: #parameters-1
-
 [5]: #getconfiguration
-
 [6]: #parameters-2
-
 [7]: #configurationrequest
-
 [8]: #parameters-3
-
 [9]: #configurationrequesttypes
-
 [10]: #local
-
 [11]: #secret
-
 [12]: #ssm
-
 [13]: #configurationrequesttypes-1
-
 [14]: #isvalid
-
 [15]: #parameters-4
-
 [16]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
-
 [17]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
-
 [18]: #configurationrepository
-
 [19]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array
-
 [20]: #configurationrequest
-
 [21]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function
-
 [22]: #configurationrequesttypes
-
 [23]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean
