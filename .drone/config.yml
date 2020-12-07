@@ -120,8 +120,6 @@ steps:
         from_secret: aws_assume_role_arn_staging
       AWS_ASSUME_ROLE_EXTERNAL_ID_STAGING:
         from_secret: aws_assume_role_external_id_staging
-      OUTPUT_BUCKET_PRODUCTION:
-        from_secret: output_bucket_production
       AWS_ASSUME_ROLE_ARN_PRODUCTION:
         from_secret: aws_assume_role_arn_production
       AWS_ASSUME_ROLE_EXTERNAL_ID_PRODUCTION:
@@ -168,7 +166,7 @@ steps:
       webhook:
         from_secret: slack_webhook
       template: |
-        :drone-{{build.status}}: *<{{build.link}}|{{uppercasefirst build.event}} {{build.number}}>* on branch *<https://github.com/{{repo.owner}}/{{repo.name}}/tree/{{build.branch}}|{{build.branch}}>* completed in {{since build.started}}
+        :drone-{{build.status}}: *<{{build.link}}|{{uppercasefirst build.event}} {{build.number}}>* to {{build.deployTo}} on branch *<https://github.com/{{repo.owner}}/{{repo.name}}/tree/{{build.branch}}|{{build.branch}}>* completed in {{since build.started}}
 
         :github: <https://github.com/{{repo.owner}}/{{repo.name}}/commit/{{build.commit}}|{{repo.owner}}/{{repo.name}}#{{truncate build.commit 8}}>
         > {{build.message}} by <https://github.com/{{build.author}}|{{build.author}}>

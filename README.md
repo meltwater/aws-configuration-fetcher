@@ -21,16 +21,19 @@ $ yarn add @meltwater/aws-configuration-fetcher
 ```
 
 [npm]: https://www.npmjs.com/
-[Yarn]: https://yarnpkg.com/
+[yarn]: https://yarnpkg.com/
 
 ## Usage
 
-The project exposes a class to help you define your configuration requests. This class
-is used in conjunction with the ConfigurationRepository to retrieve the values for your
-configuration.
+The project exposes a class to help you define your configuration requests. This class is used in
+conjunction with the ConfigurationRepository to retrieve the values for your configuration.
 
 ```javascript
-import { createConfigurationRepository, ConfigurationRequest, ConfigurationRequestTypes } from '@meltwater/aws-configuration-fetcher'
+import {
+  createConfigurationRepository,
+  ConfigurationRequest,
+  ConfigurationRequestTypes
+} from '@meltwater/aws-configuration-fetcher'
 
 const configurationRepository = createConfigurationRepository()
 
@@ -53,8 +56,8 @@ console.log(configuration.somethingSuperSecret, 'Maybe I should not log this...'
 
 ### Adapting configuration values
 
-The `ConfigurationRequest` also allows you to adapt a value being returned. This is helpful
-for providing additional validation, or converting the value to a primitive other than string.
+The `ConfigurationRequest` also allows you to adapt a value being returned. This is helpful for
+providing additional validation, or converting the value to a primitive other than string.
 
 ```javascript
 import { createConfigurationRepository, ConfigurationRequest, ConfigurationRequestTypes } from '@meltwater/aws-configuration-fetcher'
@@ -104,9 +107,8 @@ $ yarn run offline
 $ yarn run test:watch
 ```
 
-Primary development tasks are defined under `scripts` in `package.json`
-and available via `yarn run`.
-View them with
+Primary development tasks are defined under `scripts` in `package.json` and available via
+`yarn run`. View them with
 
 ```
 $ yarn run
@@ -114,8 +116,7 @@ $ yarn run
 
 ### Source code
 
-The [source code] is hosted on GitHub.
-Clone the project with
+The [source code] is hosted on GitHub. Clone the project with
 
 ```
 $ git clone git@github.com:meltwater/aws-configuration-fetcher.git
@@ -127,8 +128,8 @@ $ git clone git@github.com:meltwater/aws-configuration-fetcher.git
 
 You will need [Node.js] with [npm], [Yarn], and a [Node.js debugging] client.
 
-Be sure that all commands run under the correct Node version, e.g.,
-if using [nvm], install the correct version with
+Be sure that all commands run under the correct Node version, e.g., if using [nvm], install the
+correct version with
 
 ```
 $ nvm install
@@ -146,8 +147,8 @@ Install the development dependencies with
 $ yarn install
 ```
 
-[Node.js]: https://nodejs.org/
-[Node.js debugging]: https://nodejs.org/en/docs/guides/debugging-getting-started/
+[node.js]: https://nodejs.org/
+[node.js debugging]: https://nodejs.org/en/docs/guides/debugging-getting-started/
 [npm]: https://www.npmjs.com/
 [nvm]: https://github.com/creationix/nvm
 
@@ -155,18 +156,16 @@ $ yarn install
 
 _Drone should already be configured: this section is for reference only._
 
-The following secrets must be set on [Drone].
-These may be set manually or by running the script `./.drone/secrets.sh`.
+The following secrets must be set on [Drone]. These may be set manually or by running the script
+`./.drone/secrets.sh`.
 
-Note the Drone config path must be set to `.drone/config.yml`
-after the repo is activated.
+Note the Drone config path must be set to `.drone/config.yml` after the repo is activated.
 
 ##### npm
 
 - `npm_token_ro`: npm token for installing packages.
 - `npm_token_rw`: npm token for publishing packages.
-- `npm_team`: npm team to grant read-only package access
-  (format `org:team`, optional).
+- `npm_team`: npm team to grant read-only package access (format `org:team`, optional).
 
 ##### Slack
 
@@ -174,8 +173,8 @@ after the repo is activated.
 
 ##### Drone Promotion
 
-When the drone build publishes a new package version it can trigger
-a promotion event on a Drone repo.
+When the drone build publishes a new package version it can trigger a promotion event on a Drone
+repo.
 
 - `drone_server`: Drone server.
 - `drone_token`: Drone token.
@@ -187,12 +186,12 @@ a promotion event on a Drone repo.
 - `aws_assume_role_arn_production`: The AWS role to assume for production.
 - `aws_assume_role_external_id_production`: The external ID for the AWS role for production.
 
-[Drone]: https://drone.meltwater.io/
+[drone]: https://drone.meltwater.io/
 
 ### Publishing
 
-Use the [`npm version`][npm-version] command to release a new version.
-This will push a new git tag which will trigger a CI publish job.
+Use the [`npm version`][npm-version] command to release a new version. This will push a new git tag
+which will trigger a CI publish job.
 
 [npm-version]: https://docs.npmjs.com/cli/version
 
@@ -215,13 +214,11 @@ This npm package is licensed under the MIT license.
 
 ## Warranty
 
-This software is provided by the copyright holders and contributors "as is" and
-any express or implied warranties, including, but not limited to, the implied
-warranties of merchantability and fitness for a particular purpose are
-disclaimed. In no event shall the copyright holder or contributors be liable for
-any direct, indirect, incidental, special, exemplary, or consequential damages
-(including, but not limited to, procurement of substitute goods or services;
-loss of use, data, or profits; or business interruption) however caused and on
-any theory of liability, whether in contract, strict liability, or tort
-(including negligence or otherwise) arising in any way out of the use of this
-software, even if advised of the possibility of such damage.
+This software is provided by the copyright holders and contributors "as is" and any express or
+implied warranties, including, but not limited to, the implied warranties of merchantability and
+fitness for a particular purpose are disclaimed. In no event shall the copyright holder or
+contributors be liable for any direct, indirect, incidental, special, exemplary, or consequential
+damages (including, but not limited to, procurement of substitute goods or services; loss of use,
+data, or profits; or business interruption) however caused and on any theory of liability, whether
+in contract, strict liability, or tort (including negligence or otherwise) arising in any way out of
+the use of this software, even if advised of the possibility of such damage.
