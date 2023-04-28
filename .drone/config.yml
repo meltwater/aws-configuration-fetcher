@@ -7,7 +7,7 @@ platform:
   arch: amd64
 
 build: &build
-  image: node:erbium
+  image: node:fermium
   pull: default
   environment:
     NPM_TOKEN:
