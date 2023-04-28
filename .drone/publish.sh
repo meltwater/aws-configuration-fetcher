@@ -20,7 +20,7 @@ notify_mpkg () {
   echo "> Notified MPKG of $mpkg_name version $pkg_version."
 }
 
-if [[ "$(git log -1 --pretty='%s')" == "${pkg_version}" ]]; then
+if [[ "$(git log -1 --pretty='%s')" == "chore(release): ${pkg_version}" ]]; then
   if [[ -z "$(npm view ${pkg_name}@${pkg_version})" ]]; then
     npm publish --access=public
     notify_mpkg
